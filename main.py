@@ -54,9 +54,8 @@ class BrainWaveDataParser(object):
         HighAlpha = []
         LowBeta = []
         for data in self.dataList :
-           HighAlpha.append(data['high-alpha'])
+           HighAlpha.append(data['high-alpha']) # 갑자기 증가, 갑자기 감소
            LowBeta.append(data['low-beta'])
-
 
         temp = []
 
@@ -83,7 +82,16 @@ class BrainWaveDataParser(object):
 
         #################### Insert Yout Code ####################
 
-
+        # data['high-alpha'] -> 센서에서 10번 high-alpha 값을 받아옴
+        # if data['high-alpha'] > 어떤 조건일 때 :
+        #     print("현재 졸고 있습니다.")
+        # elif data['high-alpha'] > 어떤 조건일 때 :
+        #     print("현재 집중하고 있습니다.")
+        print("##########################")
+        print(HighAlpha)
+        print()
+        print(LowBeta)
+        print("##########################")
         ##########################################################
 
     def parse_data(self):
